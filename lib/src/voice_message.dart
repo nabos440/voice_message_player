@@ -81,6 +81,7 @@ class _VoiceMessageState extends State<VoiceMessage>
      widget.formatDuration ??= (Duration duration) {
       return duration.toString().substring(2, 11);
     };
+            _setDuration();
     super.initState();
     stream = _player.onPlayerStateChanged.listen((event) {
       switch (event) {
@@ -112,7 +113,7 @@ class _VoiceMessageState extends State<VoiceMessage>
 
   @override
   Widget build(BuildContext context) {
-        _setDuration();
+
 
     return _sizerChild(context);}
 
