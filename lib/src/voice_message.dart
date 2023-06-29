@@ -314,13 +314,9 @@ class _VoiceMessageState extends State<VoiceMessage>
 
   void _setDuration() async {
     if (widget.duration != null) {
-      setState((){
       _audioDuration = widget.duration;
-      });
     } else {
-       
       _audioDuration = await jsAudio.AudioPlayer().setUrl(widget.audioSrc!);
-       
     }
     duration = _audioDuration!.inMilliseconds;
     maxDurationForSlider = duration + .0;
