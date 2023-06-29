@@ -77,11 +77,11 @@ class _VoiceMessageState extends State<VoiceMessage>
 
   @override
   void initState() {
-    widget.formatDuration ??= (Duration duration) {
-      return duration.toString().substring(2, 11);
-    };
 
     _setDuration();
+     widget.formatDuration ??= (Duration duration) {
+      return duration.toString().substring(2, 11);
+    };
     super.initState();
     stream = _player.onPlayerStateChanged.listen((event) {
       switch (event) {
