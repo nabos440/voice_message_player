@@ -78,7 +78,6 @@ class _VoiceMessageState extends State<VoiceMessage>
   @override
   void initState() {
 
-    _setDuration();
      widget.formatDuration ??= (Duration duration) {
       return duration.toString().substring(2, 11);
     };
@@ -112,7 +111,10 @@ class _VoiceMessageState extends State<VoiceMessage>
   }
 
   @override
-  Widget build(BuildContext context) => _sizerChild(context);
+  Widget build(BuildContext context) {
+        _setDuration();
+
+    return _sizerChild(context);}
 
   Container _sizerChild(BuildContext context) => Container(
         padding: EdgeInsets.symmetric(horizontal: .8.w()),
